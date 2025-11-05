@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BeanCraft - 고객 후기</title>
+  <style>
+    :root {
+      --brown: #3e2723;
+      --beige: #f5f0e6;
+      --mint: #6fcf97;
+      --text-dark: #2c2c2c;
+      --text-light: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--beige);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--brown);
+      color: var(--text-light);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    nav a {
+      color: var(--text-light);
+      margin-left: 1rem;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav a.active { /* 현재 페이지를 나타내는 스타일 */
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    .container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
+    h2 {
+        color: var(--brown);
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .review-form {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin-bottom: 3rem;
+    }
+    .review-form label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+    .review-form input[type="text"],
+    .review-form textarea {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
+    .btn {
+      background: var(--mint);
+      color: var(--text-dark);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      display: block;
+      width: 100%;
+    }
+    .btn:hover {
+      background: #57b883;
+    }
+    
+    .reviews-list {
+        padding-top: 1rem;
+    }
+    .review-item {
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        border-left: 5px solid var(--mint);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .review-meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+    }
+    .review-content {
+        font-size: 1rem;
+    }
+    
+    footer {
+      background: var(--brown);
+      color: var(--text-light);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 3rem;
+    }
+    footer a {
+        color: var(--text-light);
+        text-decoration: none;
+        margin: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BeanCraft</h1>
+    <nav>
+      <a href="index.html#features">특징</a>
+      <a href="index.html#product">제품</a>
+      <a href="usercomment.html" class="active">고객 후기</a>
+      <a href="index.html#testimonials">후기</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>고객 후기 남기기</h2>
+    
+    <div class="review-form">
+        <form action="#" method="POST">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" required placeholder="홍길동">
+            
+            <label for="review">후기 내용</label>
+            <textarea id="review" name="review" rows="5" required placeholder="BeanCraft 커피를 사용해보신 경험을 공유해주세요!"></textarea>
+            
+            <button type="submit" class="btn">후기 등록하기</button>
+        </form>
+    </div>
+
+    <h2>다른 고객님의 소중한 후기</h2>
+    
+    <div class="reviews-list">
+        <div class="review-item">
+            <div class="review-meta">
+                <strong>김지은 고객님</strong>
+                <span>2025.11.01</span>
+            </div>
+            <p class="review-content">신선한 커피가 매일 아침 행복을 줘요. 배송도 빨라서 만족합니다! 계속 구독할 예정이에요.</p>
+        </div>
+        
+        <div class="review-item">
+            <div class="review-meta">
+                <strong>박민수 고객님</strong>
+                <span>2025.10.25</span>
+            </div>
+            <p class="review-content">첫 구독 할인 덕분에 부담 없이 시작했어요. 원두 종류도 다양해서 선택의 폭이 넓어 좋았습니다. 다크 로스트가 특히 취향저격입니다!</p>
+        </div>
+
+        <div class="review-item">
+            <div class="review-meta">
+                <strong>최현정 고객님</strong>
+                <span>2025.10.18</span>
+            </div>
+            <p class="review-content">원두를 받은 지 3일 만에 마셔봤는데, 정말 로스팅 72시간 내 배송의 신선함이 느껴졌습니다. 커피 향이 예술이에요.</p>
+        </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 BeanCraft. All rights reserved.</p>
+    <p><a href="#">이용약관</a> | <a href="#">개인정보처리방침</a> | <a href="#">고객센터</a></p>
+  </footer>
+</body>
+</html>
